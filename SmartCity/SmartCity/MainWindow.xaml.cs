@@ -20,9 +20,30 @@ namespace SmartCity
     /// </summary>
     public partial class MainWindow : Window
     {
+        DatabaseLinQDataContext db = new DatabaseLinQDataContext();
+        LoginController login;
         public MainWindow()
         {
+            login = new LoginController(db);
             InitializeComponent();
+           
+        }
+
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            string gebruikersnaam = txtGebruikersnaam.Text;
+            string wachtwoord = txtPassword.Text;
+            var gebruiker = login.inloggen(gebruikersnaam, wachtwoord);
+            if (gebruiker == true)
+            {
+                MainDash dashboard = new MainDash();
+                dashboard.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Onjuiste Login. Probeer het opnieuw");
+            }
         }
     }
 }
