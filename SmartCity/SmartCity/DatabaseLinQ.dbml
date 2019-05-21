@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SmartCityDatabase" Class="DatabaseLinQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-UU49N0C\SQLEXPRESS;Initial Catalog=SmartCityDatabase;Integrated Security=True;Pooling=False" SettingsObjectName="SmartCity.Properties.Settings" SettingsPropertyName="SmartCityDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LENBRAM092015\SQLEXPRESS;Initial Catalog=SmartCity;Integrated Security=True;Pooling=False" SettingsObjectName="SmartCity.Properties.Settings" SettingsPropertyName="SmartCityConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.[user]" Member="users">
     <Type Name="user">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

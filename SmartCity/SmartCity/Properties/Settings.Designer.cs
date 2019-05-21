@@ -33,5 +33,16 @@ namespace SmartCity.Properties {
                 return ((string)(this["SmartCityDatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LENBRAM092015\\SQLEXPRESS;Initial Catalog=SmartCity;Integrated Securit" +
+            "y=True;Pooling=False")]
+        public string SmartCityConnectionString {
+            get {
+                return ((string)(this["SmartCityConnectionString"]));
+            }
+        }
     }
 }
