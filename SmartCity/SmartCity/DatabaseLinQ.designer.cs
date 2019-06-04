@@ -22,7 +22,7 @@ namespace SmartCity
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SmartCityDatabase")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SmartCity")]
 	public partial class DatabaseLinQDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,6 +33,12 @@ namespace SmartCity
     partial void Insertuser(user instance);
     partial void Updateuser(user instance);
     partial void Deleteuser(user instance);
+    partial void Insertklantdata(klantdata instance);
+    partial void Updateklantdata(klantdata instance);
+    partial void Deleteklantdata(klantdata instance);
+    partial void Insertartikel(artikel instance);
+    partial void Updateartikel(artikel instance);
+    partial void Deleteartikel(artikel instance);
     #endregion
 		
 		public DatabaseLinQDataContext() : 
@@ -70,6 +76,22 @@ namespace SmartCity
 			get
 			{
 				return this.GetTable<user>();
+			}
+		}
+		
+		public System.Data.Linq.Table<klantdata> klantdatas
+		{
+			get
+			{
+				return this.GetTable<klantdata>();
+			}
+		}
+		
+		public System.Data.Linq.Table<artikel> artikels
+		{
+			get
+			{
+				return this.GetTable<artikel>();
 			}
 		}
 	}
@@ -159,6 +181,274 @@ namespace SmartCity
 					this._password = value;
 					this.SendPropertyChanged("password");
 					this.OnpasswordChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.klantdata")]
+	public partial class klantdata : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _dagvandeweek;
+		
+		private int _aantal;
+		
+		private string _plaats;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OndagvandeweekChanging(string value);
+    partial void OndagvandeweekChanged();
+    partial void OnaantalChanging(int value);
+    partial void OnaantalChanged();
+    partial void OnplaatsChanging(string value);
+    partial void OnplaatsChanged();
+    #endregion
+		
+		public klantdata()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dagvandeweek", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string dagvandeweek
+		{
+			get
+			{
+				return this._dagvandeweek;
+			}
+			set
+			{
+				if ((this._dagvandeweek != value))
+				{
+					this.OndagvandeweekChanging(value);
+					this.SendPropertyChanging();
+					this._dagvandeweek = value;
+					this.SendPropertyChanged("dagvandeweek");
+					this.OndagvandeweekChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_aantal", DbType="Int NOT NULL")]
+		public int aantal
+		{
+			get
+			{
+				return this._aantal;
+			}
+			set
+			{
+				if ((this._aantal != value))
+				{
+					this.OnaantalChanging(value);
+					this.SendPropertyChanging();
+					this._aantal = value;
+					this.SendPropertyChanged("aantal");
+					this.OnaantalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_plaats", DbType="VarChar(50)")]
+		public string plaats
+		{
+			get
+			{
+				return this._plaats;
+			}
+			set
+			{
+				if ((this._plaats != value))
+				{
+					this.OnplaatsChanging(value);
+					this.SendPropertyChanging();
+					this._plaats = value;
+					this.SendPropertyChanged("plaats");
+					this.OnplaatsChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.artikel")]
+	public partial class artikel : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _artikelnaam;
+		
+		private decimal _artikelprijs;
+		
+		private System.DateTime _datumverkoop;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnartikelnaamChanging(string value);
+    partial void OnartikelnaamChanged();
+    partial void OnartikelprijsChanging(decimal value);
+    partial void OnartikelprijsChanged();
+    partial void OndatumverkoopChanging(System.DateTime value);
+    partial void OndatumverkoopChanged();
+    #endregion
+		
+		public artikel()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_artikelnaam", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string artikelnaam
+		{
+			get
+			{
+				return this._artikelnaam;
+			}
+			set
+			{
+				if ((this._artikelnaam != value))
+				{
+					this.OnartikelnaamChanging(value);
+					this.SendPropertyChanging();
+					this._artikelnaam = value;
+					this.SendPropertyChanged("artikelnaam");
+					this.OnartikelnaamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_artikelprijs", DbType="Decimal(18,2) NOT NULL")]
+		public decimal artikelprijs
+		{
+			get
+			{
+				return this._artikelprijs;
+			}
+			set
+			{
+				if ((this._artikelprijs != value))
+				{
+					this.OnartikelprijsChanging(value);
+					this.SendPropertyChanging();
+					this._artikelprijs = value;
+					this.SendPropertyChanged("artikelprijs");
+					this.OnartikelprijsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datumverkoop", DbType="Date NOT NULL")]
+		public System.DateTime datumverkoop
+		{
+			get
+			{
+				return this._datumverkoop;
+			}
+			set
+			{
+				if ((this._datumverkoop != value))
+				{
+					this.OndatumverkoopChanging(value);
+					this.SendPropertyChanging();
+					this._datumverkoop = value;
+					this.SendPropertyChanged("datumverkoop");
+					this.OndatumverkoopChanged();
 				}
 			}
 		}

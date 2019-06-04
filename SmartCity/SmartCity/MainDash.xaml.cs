@@ -21,7 +21,8 @@ namespace SmartCity
     /// </summary>
     public partial class MainDash : Window
     {
-       
+
+        DatabaseLinQDataContext db = new DatabaseLinQDataContext();
         public MainDash()
         {
             InitializeComponent();
