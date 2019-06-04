@@ -4,10 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmartCity"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Title="MainDash" Height="450" Width="800">
     <Grid>
-        <Label Content="Dashboard" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Charts" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Left" Margin="386,13,10,228">
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Salesman" Labels="{Binding Labels}"></lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="Sold Apps" LabelFormatter="{Binding Formatter}"></lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+        </lvc:CartesianChart>
 
     </Grid>
 </Window>
