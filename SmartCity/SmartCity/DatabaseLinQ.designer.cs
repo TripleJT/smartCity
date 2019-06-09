@@ -36,7 +36,7 @@ namespace SmartCity
     #endregion
 		
 		public DatabaseLinQDataContext() : 
-				base(global::SmartCity.Properties.Settings.Default.SmartCityConnectionString, mappingSource)
+				base(global::SmartCity.Properties.Settings.Default.SmartCityDatabaseConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

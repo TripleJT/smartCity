@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LiveCharts;
 using LiveCharts.Wpf;
-
 namespace SmartCity
 {
     /// <summary>
@@ -31,7 +30,7 @@ namespace SmartCity
                 new ColumnSeries
                 {
                     Title = "2015",
-                    Values = new ChartValues<int> { 10, 50, 39, 50 }
+                    Values = new ChartValues<double> { 10, 50, 39, 50 }
                 }
             };
 
@@ -39,7 +38,7 @@ namespace SmartCity
             SeriesCollection.Add(new ColumnSeries
             {
                 Title = "2016",
-                Values = new ChartValues<int> { 11, 56, 42 }
+                Values = new ChartValues<double> { 11, 56, 42 }
             });
 
             //also adding values updates and animates the chart automatically
