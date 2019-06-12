@@ -74,11 +74,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ArtikelController.cs" />
     <Compile Include="DatabaseLinQ.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseLinQ.dbml</DependentUpon>
     </Compile>
+    <Compile Include="KlantdataController.cs" />
     <Compile Include="LoginController.cs" />
     <Compile Include="MainDash.xaml.cs">
       <DependentUpon>MainDash.xaml</DependentUpon>
