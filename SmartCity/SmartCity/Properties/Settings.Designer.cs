@@ -26,8 +26,8 @@ namespace SmartCity.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-UU49N0C\\SQLEXPRESS;Initial Catalog=SmartCityDatabase;Integrat" +
-            "ed Security=True;Pooling=False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LENBRAM092015\\SQLEXPRESS;Initial Catalog=SmartCity;Integrated Securit" +
+            "y=True;Pooling=False")]
         public string SmartCityDatabaseConnectionString {
             get {
                 return ((string)(this["SmartCityDatabaseConnectionString"]));
@@ -37,8 +37,8 @@ namespace SmartCity.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-UU49N0C\\SQLEXPRESS;Initial Catalog=SmartCity;Integrated Secur" +
-            "ity=True;Pooling=False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LENBRAM092015\\SQLEXPRESS;Initial Catalog=SmartCity;Integrated Securit" +
+            "y=True;Pooling=False")]
         public string SmartCityConnectionString {
             get {
                 return ((string)(this["SmartCityConnectionString"]));
